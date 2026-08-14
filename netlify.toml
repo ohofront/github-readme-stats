@@ -1,9 +1,11 @@
 [build]
   functions = "netlify/functions"
 
-# 이 부분을 추가해 줍니다!
 [functions]
-  node_bundler = "esbuild"
+  # esbuild 대신 Netlify 기본 번들러(nft) 명시
+  node_bundler = "nft"
+  # 처음 에러가 났던 axios 모듈을 배포 파일에 강제로 포함
+  included_files = ["node_modules/axios/**"]
 
 [[redirects]]
   from = "/api/*"

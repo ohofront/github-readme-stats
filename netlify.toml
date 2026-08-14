@@ -1,6 +1,10 @@
 [build]
   functions = "netlify/functions"
 
+# 이 부분을 추가해 줍니다!
+[functions]
+  node_bundler = "esbuild"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
